@@ -68,6 +68,30 @@ export default {
                 }
             }
         },
+        deleteColumn: async (parent, args, { models }) => {
+
+            try {
+                let column = await models.Column.destroy(
+                    {
+                        where: {id: args.id}
+                    }
+                );
+
+                pubsub.publish(COLUMN_DELETED, { columnDeleted: column });
+
+                return {
+                    ok: true,
+                    column,
+                };
+
+            } catch (err) {
+                console.log(err);
+                return {
+                    ok: false,
+                    errors: formatErrors(err, models),
+                }
+            }
+        },
     },
 };
 
