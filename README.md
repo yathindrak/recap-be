@@ -34,7 +34,7 @@ Warmly welcome pull requests from any contributor
 
 ## Links
 
-- [Backend (GitHub)](https://github.com/yathindra123/recap-be)
+- [Frontend (GitHub)](https://github.com/yathindra123/recap)
 
 ## License
 
