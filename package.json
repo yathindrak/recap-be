@@ -14,7 +14,7 @@
     "start": "nodemon --exec babel-node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/yathindra123/recap.git",
+  "repository": "https://github.com/yathindra123/recap-be.git",
   "author": "Yathindra Kodithuwakku",
   "dependencies": {
     "apollo-server": "^2.0.7",
