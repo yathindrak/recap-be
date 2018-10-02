@@ -61,7 +61,6 @@ export default {
                     column,
                 };
             } catch (err) {
-                console.log(err);
                 return {
                     ok: false,
                     errors: formatErrors(err, models),
@@ -85,7 +84,6 @@ export default {
                 };
 
             } catch (err) {
-                console.log(err);
                 return {
                     ok: false,
                     errors: formatErrors(err, models),

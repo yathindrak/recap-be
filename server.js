@@ -72,7 +72,7 @@ const server = new ApolloServer({
     },
     subscriptions: {
         onConnect: async ({ token, refreshToken }) => {
-            console.log('SOCKET CONNECTED');
+            console.log('Socket Connected');
             if (token && refreshToken) {
                 let user = {};
                 try {

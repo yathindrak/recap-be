@@ -53,7 +53,6 @@ export default {
                     comment,
                 };
             } catch (err) {
-                console.log(err)
                 return {
                     ok: false,
                     errors: formatErrors(err, models),
