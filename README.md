@@ -4,6 +4,7 @@ Backend of [Recap (GitHub)](https://github.com/yathindra123/recap) - Opensource 
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Build Setup](#build-setup)
+- [Tech Stack](#tech-stack)
 - [Maintainers](#maintainers)
 - [Contribute](#contribute)
 - [License](#license)
@@ -23,6 +24,12 @@ yarn
 # start dev server at localhost:4000
 yarn start
 ```
+
+## Tech Stack
+
+- Express.js
+- ms sql server (Can change to any sql based database)
+- Apollo Graphql with subscriptions
 
 ## Maintainers
 
