@@ -6,15 +6,13 @@ import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
 import { PubSub } from 'apollo-server';
 import { createServer } from 'http';
 import jwt from 'jsonwebtoken';
-import models from './database/models';
+import models from './database/models/index';
 import { refreshTokens } from './auth';
+require('dotenv').config();
 
 // merger typeDefs and resolvers
 const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './schema')));
 const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
-
-const SECRET = 'asongoficeandfire';
-const SECRET2 = 'agameofthrones';
 
 const app = express();
 export const pubsub = new PubSub();
@@ -30,11 +28,11 @@ const addUser = async (req, res, next) => {
     const token = req.headers['x-token'];
     if (token) {
         try {
-            const { user } = jwt.verify(token, SECRET); //This is like=>  {"useridentity":"3928562347"}
+            const { user } = jwt.verify(token, process.env.SECRET); //This is like=>  {"useridentity":"3928562347"}
             req.user = user;
         } catch (err) {
             const refreshToken = req.headers['x-refresh-token'];
-            const newTokens = await refreshTokens(token, refreshToken, models, SECRET, SECRET2);
+            const newTokens = await refreshTokens(token, refreshToken, models, process.env.SECRET, process.env.SECRET2);
             if (newTokens.token && newTokens.refreshToken) {
                 res.set('Access-Control-Expose-Headers', 'x-token, x-refresh-token');
                 res.set('x-token', newTokens.token);
@@ -66,8 +64,8 @@ const server = new ApolloServer({
         return {
             models,
             user: req.user,
-            SECRET,
-            SECRET2,
+            SECRET: process.env.SECRET,
+            SECRET2: process.env.SECRET2,
         };
     },
     subscriptions: {
@@ -78,7 +76,7 @@ const server = new ApolloServer({
                 try {
                     ({ user } = jwt.verify(token, SECRET));
                 } catch (err) {
-                    const newTokens = await refreshTokens(token, refreshToken, models, SECRET, SECRET2);
+                    const newTokens = await refreshTokens(token, refreshToken, models, process.env.SECRET, process.env.SECRET2);
                     ({ user } = newTokens);
                 }
                 return { models, user };

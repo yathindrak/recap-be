@@ -11,7 +11,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "start": "nodemon --exec babel-node src/server.js",
+    "start:dist": "pm2 start dist/server.js",
+    "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/yathindra123/recap-be.git",
@@ -31,10 +33,10 @@
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.11",
     "merge-graphql-schemas": "^1.5.4",
-    "msnodesqlv8": "^0.6.8",
     "mssql": "^4.2.1",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
+    "pm2": "^3.2.2",
     "sequelize": "^4.38.1"
   }
 }

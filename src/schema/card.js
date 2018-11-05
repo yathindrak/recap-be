@@ -28,5 +28,6 @@ export default `
     createCard(columnId: Int!, name: String!, description: String!, order_num: Int!): CardResponse!
     updateCard(id: Int!, name: String!, description: String!): CardResponse!
     deleteCard(id: Int!): CardResponse!
+    rearrangeCard(id: Int!, columnId: Int!, order_num: Int!): CardResponse!
   }
 `;
