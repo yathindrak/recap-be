@@ -32,8 +32,7 @@ yarn start
 - Apollo Graphql with subscriptions
 
 ## Maintainers
-
-[Yathindra Kodithuwakku](https://github.com/yathindra123)
+[@yathindra123](https://www.linkedin.com/in/yathindra-kodithuwakku-651403133/)
 
 ## Contribute
 
