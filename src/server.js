@@ -74,7 +74,7 @@ const server = new ApolloServer({
             if (token && refreshToken) {
                 let user = {};
                 try {
-                    ({ user } = jwt.verify(token, SECRET));
+                    ({ user } = jwt.verify(token, process.env.SECRET));
                 } catch (err) {
                     const newTokens = await refreshTokens(token, refreshToken, models, process.env.SECRET, process.env.SECRET2);
                     ({ user } = newTokens);
@@ -87,6 +87,10 @@ const server = new ApolloServer({
 });
 
 server.applyMiddleware({ app });
+
+console.log(__dirname)
+// serve front end in prod
+app.use('*', express.static(path.join(__dirname, 'dist-fe')));
 
 const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);

@@ -22,6 +22,7 @@
     "apollo-server": "^2.0.7",
     "apollo-server-express": "^2.0.7",
     "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "bcrypt": "^3.0.1",
@@ -37,6 +38,7 @@
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
     "pm2": "^3.2.2",
-    "sequelize": "^4.38.1"
+    "sequelize": "^4.38.1",
+    "serve-static": "^1.13.2"
   }
 }
