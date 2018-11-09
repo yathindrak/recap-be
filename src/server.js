@@ -9,12 +9,13 @@ import jwt from 'jsonwebtoken';
 import models from './database/models/index';
 import { refreshTokens } from './auth';
 require('dotenv').config();
-
+const history = require('connect-history-api-fallback');
 // merger typeDefs and resolvers
 const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './schema')));
 const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')));
 
 const app = express();
+app.use(history());
 export const pubsub = new PubSub();
 
 const eraseDatabaseOnSync = false;
@@ -88,9 +89,11 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app });
 
-console.log(__dirname)
 // serve front end in prod
-app.use('*', express.static(path.join(__dirname, 'dist-fe')));
+app.use(express.static(path.join(__dirname, 'dist-fe')));
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'dist-fe', 'index.html'));
+});
 
 const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
