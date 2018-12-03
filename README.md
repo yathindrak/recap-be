@@ -13,6 +13,7 @@ Backend of [Recap (GitHub)](https://github.com/yathindra123/recap) - Opensource 
 
 Open Source Kanban app for sprint retrospective -Anonymous(Without Login)
 
+
 ## Build Setup
 
 ###Yarn
@@ -30,6 +31,10 @@ yarn start
 - Express.js
 - ms sql server (Can change to any sql based database)
 - Apollo Graphql with subscriptions
+
+## Automatic restart
+Go through below link
+https://blog.cloudboost.io/nodejs-pm2-startup-on-windows-db0906328d75?gi=e094e569457e
 
 ## Maintainers
 [@yathindra123](https://www.linkedin.com/in/yathindra-kodithuwakku-651403133/)
