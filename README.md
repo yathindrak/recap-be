@@ -23,7 +23,21 @@ yarn
 
 # start dev server at localhost:4000
 yarn start
+
+# build project
+yarn build
 ```
+
+###Bundling For Production
+
+It needs to run `yarn build` or `npm run build` to build this backend project and need to add the frontend build distribution in to a new folder called build-fe inside build folder.
+
+
+###Serve In Production
+Here [PM2](https://pm2.io/doc/en/runtime/overview/) has used as the process manager. So mention 
+environment variables in the ecosystem.config.js file, which has created in .env file 
+(.env.default has needed variables) in the development stage.
+
 
 ## Tech Stack
 

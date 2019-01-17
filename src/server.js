@@ -90,10 +90,10 @@ const server = new ApolloServer({
 server.applyMiddleware({ app });
 
 // serve front end in prod
-app.use(express.static(path.join(__dirname, 'dist-fe')));
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist-fe', 'index.html'));
-});
+// app.use(express.static(path.join(__dirname, 'dist-fe')));
+// app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'dist-fe', 'index.html'));
+// });
 
 const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
