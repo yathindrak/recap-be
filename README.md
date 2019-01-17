@@ -1,5 +1,5 @@
 # recap-be
-Backend of [Recap (GitHub)](https://github.com/yathindra123/recap) - Opensource kanban board for sprint retrospective
+Back end of the [Retro](https://bitbucket.pearson.com/users/urawyya/repos/retro/browse) application.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -10,9 +10,6 @@ Backend of [Recap (GitHub)](https://github.com/yathindra123/recap) - Opensource 
 - [License](#license)
 
 ## Getting Started
-
-Open Source Kanban app for sprint retrospective -Anonymous(Without Login)
-
 
 ## Build Setup
 
@@ -46,7 +43,7 @@ environment variables in the ecosystem.config.js file, which has created in .env
 - ms sql server (Can change to any sql based database)
 - Apollo Graphql with subscriptions
 
-## Automatic restart
+## Automatic restart the pm2 served app
 Go through below link
 https://blog.cloudboost.io/nodejs-pm2-startup-on-windows-db0906328d75?gi=e094e569457e
 
@@ -59,7 +56,7 @@ Warmly welcome pull requests from any contributor
 
 ## Links
 
-- [Frontend (GitHub)](https://github.com/yathindra123/recap)
+- [Frontend](https://bitbucket.pearson.com/users/urawyya/repos/retro/browse)
 
 ## License
 
