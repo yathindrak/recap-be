@@ -1,5 +1,5 @@
 # recap-be
-Back end of the [Retro](https://bitbucket.pearson.com/users/urawyya/repos/retro/browse) application.
+Back end of the [Recap](https://github.com/yathindrakodithuwakku/recap) application.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
